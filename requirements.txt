@@ -1,0 +1,5 @@
+
+Flask==2.0.1
+SQLAlchemy==1.4.22
+web3==5.25.0
+PyVultr==1.4.0

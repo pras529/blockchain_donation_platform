@@ -1,0 +1,43 @@
+app:
+  secret_key: "your_secret_key"  # Replace with a secure secret key
+  session_type: "sqlalchemy"     # Store sessions in the database
+
+database:
+  dialect: "postgresql"
+  driver: "psycopg2"
+  username: "your_db_username"
+  password: "your_db_password"
+  host: "localhost"
+  port: 5432
+  database_name: "blockchain_donation_db"
+
+vultr:
+  api_key: "your_vultr_api_key"  # Replace with your actual Vultr API key
+  services:
+    compute_instance:
+      name: "DonationAppInstance"
+      region: "ewr"   # Replace with your preferred region
+      plan: "vc2-1c-1gb"
+      os_id: 215  # Example: Ubuntu 20.04
+    object_storage:
+      bucket_name: "donation-bucket"
+      region: "ewr"
+    load_balancer:
+      name: "DonationLoadBalancer"
+      region: "ewr"
+    managed_database:
+      name: "DonationDB"
+      region: "ewr"
+    block_storage:
+      name: "DonationBlockStorage"
+      size_gb: 100
+
+email:
+  smtp_server: "smtp.yourprovider.com"
+  smtp_port: 587
+  email_address: "your_email@example.com"
+  email_password: "your_email_password"
+
+logging:
+  level: "DEBUG"
+  file: "app.log"
